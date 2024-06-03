@@ -1,14 +1,19 @@
 import { View, StyleSheet } from 'react-native'
 import { Button, Text } from '@rneui/base'
+import { getAllPostsService } from "../services/TestServices";
 
 
 export const TestWebServices = () => {
+  const getAllPosts=()=>{
+    getAllPostsService();
+  }
 
   return <View style={styles.container}>
     <Text style={styles.textContainer}>MODULO 3</Text>
     <View style={styles.buttonContainer}>
       <Button
         title="Recuperar Posts"
+        onPress={getAllPosts}
       />
       <Button
         title="Crear Post"
