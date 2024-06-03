@@ -1,6 +1,12 @@
 import { View, StyleSheet } from 'react-native'
 import { Button, Text } from '@rneui/base'
-import { getAllPostsService } from "../services/TestServices";
+import { getAllPostsService,
+  createPostService,
+  updatePostService ,
+  getByUserIdService,
+getAllStoresService,
+createProdductoFakeService,
+updateeProductoFakeService} from "../services/TestServices";
 
 
 export const TestWebServices = () => {
@@ -8,6 +14,24 @@ export const TestWebServices = () => {
     getAllPostsService();
   }
 
+  const createPost=()=>{
+    createPostService();
+  }
+  const updatePost=()=>{
+    updatePostService();
+  }
+  const getByUserId=()=>{
+    getByUserIdService();
+  }
+  const getAllStores=()=>{
+    getAllStoresService();
+  }
+  const createProdductoFake=()=>{
+    createProdductoFakeService();
+  }
+  const updateProductoFake=()=>{
+    updateeProductoFakeService();
+  }
   return <View style={styles.container}>
     <Text style={styles.textContainer}>MODULO 3</Text>
     <View style={styles.buttonContainer}>
@@ -17,23 +41,29 @@ export const TestWebServices = () => {
       />
       <Button
         title="Crear Post"
+        onPress={createPost}
       />
         <Button
         title="Actualizar Post"
+        onPress={updatePost}
       />
         <Button
         title="Filtrar"
+        onPress={getByUserId}
       />
           <Button
         title="XXX"
+        onPress={getAllStores}
       />
 
       <Button
         title="YYY"
+        onPress={createProdductoFake}
       />
 
       <Button
         title="ZZZ"
+        onPress={updateProductoFake}
       />
       
     </View>
